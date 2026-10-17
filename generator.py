@@ -17,7 +17,8 @@ from Cheetah.Template import Template
 type_map = {
     cindex.TypeKind.VOID        : "void",
     cindex.TypeKind.BOOL        : "bool",
-    cindex.TypeKind.CHAR_U      : "unsigned char",
+    # CHAR_U is plain char on unsigned-char targets; UCHAR is explicit unsigned char.
+    cindex.TypeKind.CHAR_U      : "char",
     cindex.TypeKind.UCHAR       : "unsigned char",
     cindex.TypeKind.CHAR16      : "char",
     cindex.TypeKind.CHAR32      : "char",

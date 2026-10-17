@@ -28,6 +28,7 @@ conversions:
     "long long": "ok &= jsval_to_long_long(cx, ${in_value}, &${out_value})"
     "std::string": "ok &= jsval_to_std_string(cx, ${in_value}, &${out_value})"
     "const char*": "std::string ${out_value}_tmp; ok &= jsval_to_std_string(cx, ${in_value}, &${out_value}_tmp); ${out_value} = ${out_value}_tmp.c_str()"
+    "const unsigned char*": "std::string ${out_value}_tmp; ok &= jsval_to_std_string(cx, ${in_value}, &${out_value}_tmp); ${out_value} = (const unsigned char*)${out_value}_tmp.c_str()"
     "CCPoint": "ok &= jsval_to_ccpoint(cx, ${in_value}, &${out_value})"
     "CCRect": "ok &= jsval_to_ccrect(cx, ${in_value}, &${out_value})"
     "CCSize": "ok &= jsval_to_ccsize(cx, ${in_value}, &${out_value})"
